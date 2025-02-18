@@ -72,10 +72,12 @@ class HafalanQuranActivity : BaseActivity<ActivityHafalanQuranBinding>(), Hafala
                     AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
                     icBack.setImageResource(R.drawable.ic_back_dark)
                     icBookmark.setImageResource(R.drawable.ic_bookmark_dark)
+                    icNotifikasiPengingat.setImageResource(R.drawable.ic_notifikasi_dark)
                 } else {
                     AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
                     icBack.setImageResource(R.drawable.ic_back_light)
                     icBookmark.setImageResource(R.drawable.ic_bookmark_light)
+                    icNotifikasiPengingat.setImageResource(R.drawable.ic_notifikasi_light)
                 }
             }
         }
