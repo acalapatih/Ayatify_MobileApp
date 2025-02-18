@@ -4,7 +4,9 @@ import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
+import com.acalapatih.ayatify.BaseActivity
 import com.acalapatih.ayatify.R
 import com.acalapatih.ayatify.core.domain.model.hafalanquran.HafalanSuratModel
 import com.acalapatih.ayatify.databinding.RecyclerviewHafalanSuratBinding
@@ -12,7 +14,7 @@ import com.acalapatih.ayatify.databinding.RecyclerviewHafalanSuratBinding
 class HafalanSuratAdapter(
     private val listAyat: List<HafalanSuratModel.GetListAyat>,
     private val ayatDihafal: Int,
-    val listener: OnUserClickListener? = null
+    val listener: OnUserClickListener? = null,
 ): RecyclerView.Adapter<HafalanSuratAdapter.ViewHolder>() {
     inner class ViewHolder(view: View): RecyclerView.ViewHolder(view) {
         private val binding = RecyclerviewHafalanSuratBinding.bind(view)
@@ -32,6 +34,9 @@ class HafalanSuratAdapter(
                 } else {
                     itemView.isEnabled = false
                     itemView.alpha = 0.5f
+                    cvHafalanSurat.setOnClickListener {
+                        Toast.makeText(itemView.context, "Anda Harus Menyelesaikan Hafalan Ayat Sebelumnya", Toast.LENGTH_SHORT).show()
+                    }
                 }
             }
         }
