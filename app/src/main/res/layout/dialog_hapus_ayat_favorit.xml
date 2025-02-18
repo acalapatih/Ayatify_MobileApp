@@ -11,38 +11,27 @@
         style="@style/bg_dialog">
 
         <TextView
-            android:id="@+id/tv_ayat_favorit"
+            android:id="@+id/tv_hapus_ayat_favorit"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             style="@style/tv_semibold"
             android:textSize="12sp"
-            android:text="@string/tv_ayat_favorit"
+            android:text="@string/tv_hapus_ayat_favorit"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             android:layout_marginTop="30dp"
             android:layout_marginStart="30dp"/>
 
-        <ImageView
-            android:id="@+id/ic_close"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/ic_close_light"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            android:layout_marginTop="30dp"
-            android:layout_marginEnd="30dp"
-            android:contentDescription="@string/desc_ic_close" />
-
         <TextView
-            android:id="@+id/tv_perintah_ayat_favorit"
+            android:id="@+id/tv_perintah_hapus_ayat_favorit"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textAlignment="center"
-            android:text="@string/tv_perintah_ayat_favorit"
+            android:text="@string/tv_perintah_hapus_ayat_favorit"
             style="@style/tv_regular"
             android:textSize="12sp"
             android:layout_marginHorizontal="30dp"
-            app:layout_constraintTop_toBottomOf="@id/ic_close"
+            app:layout_constraintTop_toBottomOf="@id/tv_hapus_ayat_favorit"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             android:layout_marginTop="20dp"/>
@@ -57,7 +46,7 @@
             android:paddingHorizontal="10dp"
             android:text="@string/btn_simpan"
             android:layout_marginStart="50dp"
-            app:layout_constraintTop_toBottomOf="@id/tv_perintah_ayat_favorit"
+            app:layout_constraintTop_toBottomOf="@id/tv_perintah_hapus_ayat_favorit"
             app:layout_constraintStart_toStartOf="parent"
             android:layout_marginTop="20dp"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -73,7 +62,7 @@
             android:layout_marginEnd="50dp"
             android:paddingHorizontal="10dp"
             android:text="@string/btn_batal"
-            app:layout_constraintTop_toBottomOf="@id/tv_perintah_ayat_favorit"
+            app:layout_constraintTop_toBottomOf="@id/tv_perintah_hapus_ayat_favorit"
             app:layout_constraintEnd_toEndOf="parent"
             android:layout_marginTop="20dp"
             app:layout_constraintBottom_toBottomOf="parent"

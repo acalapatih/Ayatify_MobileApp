@@ -23,17 +23,6 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
-            android:id="@+id/ic_close"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
-            android:layout_marginEnd="30dp"
-            android:contentDescription="@string/desc_ic_close"
-            android:src="@drawable/ic_close_light"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <ImageView
             android:id="@+id/ic_lancar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -127,9 +116,21 @@
             android:layout_marginBottom="30dp"
             android:text="@string/tv_detail_tidaklancar"
             android:textSize="12sp"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="@id/tv_tidaklancar"
             app:layout_constraintTop_toBottomOf="@id/tv_tidaklancar" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_mengerti"
+            app:layout_constraintCircleRadius="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/btn_simpan"
+            android:text="@string/btn_mengerti"
+            android:layout_marginVertical="15dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_detail_tidaklancar"
+            app:layout_constraintBottom_toBottomOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

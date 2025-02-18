@@ -13,12 +13,13 @@ import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.isVisible
 import androidx.viewbinding.ViewBinding
-import com.acalapatih.ayatify.databinding.ItemDialogAturNotifikasiBinding
-import com.acalapatih.ayatify.databinding.ItemDialogAyatFavoritBinding
-import com.acalapatih.ayatify.databinding.ItemDialogHapusAyatFavoritBinding
-import com.acalapatih.ayatify.databinding.ItemDialogRekamSuaraBinding
-import com.acalapatih.ayatify.databinding.ItemDialogStatusHafalanBinding
-import com.acalapatih.ayatify.databinding.ItemDialogTerakhirDibacaBinding
+import com.acalapatih.ayatify.databinding.DialogAturNotifikasiBinding
+import com.acalapatih.ayatify.databinding.DialogAyatFavoritBinding
+import com.acalapatih.ayatify.databinding.DialogHapusAyatFavoritBinding
+import com.acalapatih.ayatify.databinding.DialogItemAyatFavoritBinding
+import com.acalapatih.ayatify.databinding.DialogRekamSuaraBinding
+import com.acalapatih.ayatify.databinding.DialogStatusHafalanBinding
+import com.acalapatih.ayatify.databinding.DialogTerakhirDibacaBinding
 
 abstract class BaseActivity<VB: ViewBinding> : AppCompatActivity() {
     abstract fun getViewBinding(): VB
@@ -50,7 +51,7 @@ abstract class BaseActivity<VB: ViewBinding> : AppCompatActivity() {
         onSimpanButtonClicked: () -> Unit
     ) {
         val dialog = Dialog(this)
-        val dialogBinding = ItemDialogTerakhirDibacaBinding.inflate(layoutInflater)
+        val dialogBinding = DialogTerakhirDibacaBinding.inflate(layoutInflater)
         val window = dialog.window
 
         window?.setBackgroundDrawableResource(android.R.color.transparent)
@@ -65,9 +66,6 @@ abstract class BaseActivity<VB: ViewBinding> : AppCompatActivity() {
         dialog.show()
 
         with(dialogBinding) {
-            icClose.setOnClickListener {
-                dialog.dismiss()
-            }
             btnSimpan.setOnClickListener {
                 onSimpanButtonClicked.invoke()
                 showToast(
@@ -86,7 +84,7 @@ abstract class BaseActivity<VB: ViewBinding> : AppCompatActivity() {
         onSimpanButtonClicked: () -> Unit
     ) {
         val dialog = Dialog(this)
-        val dialogBinding = ItemDialogAyatFavoritBinding.inflate(layoutInflater)
+        val dialogBinding = DialogAyatFavoritBinding.inflate(layoutInflater)
         val window = dialog.window
 
         window?.setBackgroundDrawableResource(android.R.color.transparent)
@@ -101,9 +99,6 @@ abstract class BaseActivity<VB: ViewBinding> : AppCompatActivity() {
         dialog.show()
 
         with(dialogBinding) {
-            icClose.setOnClickListener {
-                dialog.dismiss()
-            }
             btnSimpan.setOnClickListener {
                 onSimpanButtonClicked.invoke()
                 showToast(
@@ -118,11 +113,15 @@ abstract class BaseActivity<VB: ViewBinding> : AppCompatActivity() {
         }
     }
 
-    fun showDialogHapusAyatFavorit(
-        onSimpanButtonClicked: () -> Unit
+    fun showDialogItemAyatFavorit(
+        namaSurat: String,
+        nomorAyat: String,
+        lafadzAyat: String,
+        terjemahanAyat: String,
+        isDarkMode: Boolean
     ) {
         val dialog = Dialog(this)
-        val dialogBinding = ItemDialogHapusAyatFavoritBinding.inflate(layoutInflater)
+        val dialogBinding = DialogItemAyatFavoritBinding.inflate(layoutInflater)
         val window = dialog.window
 
         window?.setBackgroundDrawableResource(android.R.color.transparent)
@@ -137,9 +136,42 @@ abstract class BaseActivity<VB: ViewBinding> : AppCompatActivity() {
         dialog.show()
 
         with(dialogBinding) {
-            icClose.setOnClickListener {
+            tvItemAyatFavorit.text = getString(R.string.ayat_favorit, namaSurat, nomorAyat)
+            tvNomor.text = nomorAyat
+            tvAyat.text = lafadzAyat
+            tvTerjemahanAyat.text = terjemahanAyat
+
+            btnTutup.setOnClickListener {
                 dialog.dismiss()
             }
+
+            if (isDarkMode) {
+                icNomor.setImageResource(R.drawable.ic_nomor_dark)
+            } else {
+                icNomor.setImageResource(R.drawable.ic_nomor_light)
+            }
+        }
+    }
+
+    fun showDialogHapusAyatFavorit(
+        onSimpanButtonClicked: () -> Unit
+    ) {
+        val dialog = Dialog(this)
+        val dialogBinding = DialogHapusAyatFavoritBinding.inflate(layoutInflater)
+        val window = dialog.window
+
+        window?.setBackgroundDrawableResource(android.R.color.transparent)
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE)
+        dialog.setContentView(dialogBinding.root)
+
+        val deviceWidth: Int = Resources.getSystem().displayMetrics.widthPixels
+        val margin = (60 * Resources.getSystem().displayMetrics.density).toInt()
+        val width: Int = deviceWidth - margin
+        window?.setLayout(width, ViewGroup.LayoutParams.WRAP_CONTENT)
+        dialog.setCancelable(false)
+        dialog.show()
+
+        with(dialogBinding) {
             btnSimpan.setOnClickListener {
                 onSimpanButtonClicked.invoke()
                 showToast(
@@ -158,7 +190,7 @@ abstract class BaseActivity<VB: ViewBinding> : AppCompatActivity() {
         onSimpanButtonClicked: ((hour: Int, minute: Int) -> Unit)? = null,
     ) {
         val dialog = Dialog(this)
-        val dialogBinding = ItemDialogAturNotifikasiBinding.inflate(layoutInflater)
+        val dialogBinding = DialogAturNotifikasiBinding.inflate(layoutInflater)
         val window = dialog.window
 
         window?.setBackgroundDrawableResource(android.R.color.transparent)
@@ -173,10 +205,7 @@ abstract class BaseActivity<VB: ViewBinding> : AppCompatActivity() {
         dialog.show()
 
         with(dialogBinding) {
-            icClose.setOnClickListener {
-                dialog.dismiss()
-            }
-            tpNotifikasiPengingat.setOnTimeChangedListener { view, hourOfDay, minute ->
+            tpNotifikasiPengingat.setOnTimeChangedListener { _, hourOfDay, minute ->
                 selectedHour = hourOfDay
                 selectedMinute = minute
             }
@@ -196,14 +225,13 @@ abstract class BaseActivity<VB: ViewBinding> : AppCompatActivity() {
 
     @SuppressLint("SetTextI18n")
     @RequiresApi(Build.VERSION_CODES.O)
-    @Suppress("DEPRECATION")
     protected fun showDialogRekamSuara(
         onClose: () -> Unit,
         onStartRecording: () -> Unit,
         onStopRecording: () -> Unit,
     ) {
         val dialog = Dialog(this)
-        val dialogBinding = ItemDialogRekamSuaraBinding.inflate(layoutInflater)
+        val dialogBinding = DialogRekamSuaraBinding.inflate(layoutInflater)
         val window = dialog.window
 
         window?.setBackgroundDrawableResource(android.R.color.transparent)
@@ -248,7 +276,7 @@ abstract class BaseActivity<VB: ViewBinding> : AppCompatActivity() {
 
     fun showDialogStatusHafalan() {
         val dialog = Dialog(this)
-        val dialogBinding = ItemDialogStatusHafalanBinding.inflate(layoutInflater)
+        val dialogBinding = DialogStatusHafalanBinding.inflate(layoutInflater)
         val window = dialog.window
 
         window?.setBackgroundDrawableResource(android.R.color.transparent)
@@ -263,7 +291,7 @@ abstract class BaseActivity<VB: ViewBinding> : AppCompatActivity() {
         dialog.show()
 
         with(dialogBinding) {
-            icClose.setOnClickListener {
+            btnMengerti.setOnClickListener {
                 dialog.dismiss()
             }
         }

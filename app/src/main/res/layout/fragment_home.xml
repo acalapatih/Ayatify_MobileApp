@@ -11,6 +11,7 @@
         android:id="@+id/cv_header_home"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        app:cardElevation="0dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -72,9 +73,9 @@
                 app:layout_constraintTop_toBottomOf="@id/tv_selamat_datang">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
+                    style="@style/bg_banner_home"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    style="@style/bg_banner_home">
+                    android:layout_height="wrap_content">
 
                     <TextView
                         android:id="@+id/tv_label_progres_hafalan"
@@ -232,11 +233,13 @@
                     <TextView
                         android:id="@+id/tv_ayat_dibaca"
                         style="@style/tv_semibold"
-                        android:layout_width="wrap_content"
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
+                        android:layout_marginEnd="15dp"
                         android:layout_marginBottom="10dp"
                         app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="@id/tv_terakhir_dibaca"
                         app:layout_constraintTop_toBottomOf="@id/tv_terakhir_dibaca"
                         tools:text="@string/tv_ayat_dibaca" />
@@ -290,11 +293,13 @@
                     <TextView
                         android:id="@+id/tv_surat_dihafal"
                         style="@style/tv_semibold"
-                        android:layout_width="wrap_content"
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
+                        android:layout_marginEnd="15dp"
                         android:layout_marginBottom="10dp"
                         app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="@id/tv_terakhir_dihafal"
                         app:layout_constraintTop_toBottomOf="@id/tv_terakhir_dihafal"
                         tools:text="@string/tv_surat_dihafal" />

@@ -9,5 +9,7 @@ import kotlinx.parcelize.Parcelize
 data class AyatFavorit(
     val nomorSurat: String,
     val namaSurat: String? = null,
-    val nomorAyat: String
+    val nomorAyat: String,
+    val lafadzAyat: String,
+    val terjemahanAyat: String
 ) : Parcelable

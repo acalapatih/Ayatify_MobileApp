@@ -115,4 +115,8 @@
     <string name="desc_image_hafalan_quran">Image Hafalan Quran</string>
     <string name="desc_icon_terakhir_dihafal">Icon Terakhir Dihafal</string>
     <string name="desc_icon_hafalan_quran">Icon Hafalan Quran</string>
+    <string name="btn_mengerti">Mengerti</string>
+    <string name="tv_item_ayat_favorit">Al-Fatihah : 1</string>
+    <string name="btn_tutup">Tutup</string>
+    <string name="ayat_favorit">%s : %s</string>
 </resources>

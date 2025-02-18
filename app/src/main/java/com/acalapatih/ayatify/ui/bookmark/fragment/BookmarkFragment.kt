@@ -34,7 +34,7 @@ class BookmarkFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         _binding = FragmentBookmarkBinding.inflate(inflater, container, false)
         return binding.root
     }
@@ -43,7 +43,6 @@ class BookmarkFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         initView()
-        initObserver()
     }
 
     private fun initView() {
@@ -60,7 +59,7 @@ class BookmarkFragment : Fragment() {
                     icTerakhirDibaca.setImageResource(R.drawable.ic_dibaca_dark)
                     icAyatFavorit.setImageResource(R.drawable.ic_ayat_favorit_dark)
 
-                    bookmarkAdapter = BookmarkAdapter(requireContext(), isDarkModeActive)
+                    bookmarkAdapter = BookmarkAdapter(isDarkModeActive)
                     val layoutManager = LinearLayoutManager(requireContext())
                     val itemDecoration = DividerItemDecoration(requireContext(), layoutManager.orientation)
                     with(binding.rvAyat) {
@@ -68,12 +67,13 @@ class BookmarkFragment : Fragment() {
                         addItemDecoration(itemDecoration)
                         adapter = bookmarkAdapter
                     }
+                    initObserver(isDarkModeActive)
                 } else {
                     AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
                     icTerakhirDibaca.setImageResource(R.drawable.ic_dibaca_light)
                     icAyatFavorit.setImageResource(R.drawable.ic_ayat_favorit_light)
 
-                    bookmarkAdapter = BookmarkAdapter(requireContext(), isDarkModeActive)
+                    bookmarkAdapter = BookmarkAdapter(isDarkModeActive)
                     val layoutManager = LinearLayoutManager(requireContext())
                     val itemDecoration = DividerItemDecoration(requireContext(), layoutManager.orientation)
                     with(binding.rvAyat) {
@@ -81,13 +81,14 @@ class BookmarkFragment : Fragment() {
                         addItemDecoration(itemDecoration)
                         adapter = bookmarkAdapter
                     }
+                    initObserver(isDarkModeActive)
                 }
             }
         }
     }
 
     @SuppressLint("SetTextI18n")
-    private fun initObserver() {
+    private fun initObserver(isDarkMode: Boolean) {
         viewModel.ayatDibaca.observe(viewLifecycleOwner) { data ->
             if (data != null) {
                 with(binding.tvAyatDibaca) {
@@ -106,6 +107,19 @@ class BookmarkFragment : Fragment() {
             if (listAyatFavorit != null) {
                 bookmarkAdapter.setListFavorite(listAyatFavorit)
 
+                bookmarkAdapter.lihatAyatFavorit = { ayatFavorit ->
+                    val baseActivity = activity as? BaseActivity<*>
+                    ayatFavorit.namaSurat?.let {
+                        baseActivity?.showDialogItemAyatFavorit(
+                            it,
+                            ayatFavorit.nomorAyat,
+                            ayatFavorit.lafadzAyat,
+                            ayatFavorit.terjemahanAyat,
+                            isDarkMode
+                        )
+                    }
+                }
+
                 bookmarkAdapter.hapusAyatFavorit = { ayatFavorit ->
                     val baseActivity = activity as? BaseActivity<*>
                     baseActivity?.showDialogHapusAyatFavorit {
@@ -116,5 +130,4 @@ class BookmarkFragment : Fragment() {
                 binding.tvNoDataAyatFavorit.isVisible = true
             }
         }
-    }
-}
+    }}

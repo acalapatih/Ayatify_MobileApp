@@ -18,7 +18,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
             android:contentDescription="@string/desc_ic_nomor"
-            android:src="@drawable/ic_nomor_dark"
+            android:src="@drawable/ic_nomor_light"
             app:layout_constraintBottom_toBottomOf="@id/tv_ayat"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@id/tv_ayat" />
@@ -43,8 +43,7 @@
             android:layout_marginStart="70dp"
             android:layout_marginTop="30dp"
             android:layout_marginEnd="20dp"
-            android:fontFamily="@font/rubik_regular"
-            android:textColor="@color/black_040D12"
+            style="@style/tv_ayat"
             android:textSize="24sp"
             android:lineSpacingExtra="15dp"
             app:layout_constraintEnd_toEndOf="parent"

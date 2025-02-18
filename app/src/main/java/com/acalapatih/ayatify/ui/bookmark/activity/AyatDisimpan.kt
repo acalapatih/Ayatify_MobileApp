@@ -132,14 +132,8 @@ class AyatDisimpan : BaseActivity<ActivityAyatFavoritBinding>(), BacaSuratAdapte
                     )
                     tvSurat.text = data.namaSurat
                     tvInfoSurat.text = "${data.artiSurat} | ${data.jumlahAyat} Ayat"
-                    rvAyat.apply {
-                        adapter = bacaAyatAdapter
-                        if (scrollState == 0) {
-                            nomorAyat?.let { smoothScrollToPosition(it.toInt()) }
-                        } else {
-                            stopScroll()
-                        }
-                    }
+                    rvAyat.adapter = bacaAyatAdapter
+                    rvAyat.scrollToPosition(3)
 
                     bacaAyatAdapter.ayatFavoritSelected = { ayatFavorit, nomorAyat, icFavorit ->
                         showDialogAyatFavorit {
@@ -160,14 +154,8 @@ class AyatDisimpan : BaseActivity<ActivityAyatFavoritBinding>(), BacaSuratAdapte
                     )
                     tvSurat.text = data.namaSurat
                     tvInfoSurat.text = "${data.artiSurat} | ${data.jumlahAyat} Ayat"
-                    rvAyat.apply {
-                        adapter = bacaAyatAdapter
-                        if (scrollState == 0) {
-                            nomorAyat?.let { smoothScrollToPosition(it.toInt()) }
-                        } else {
-                            stopScroll()
-                        }
-                    }
+                    rvAyat.adapter = bacaAyatAdapter
+                    rvAyat.scrollToPosition(3)
 
                     bacaAyatAdapter.ayatFavoritSelected = { ayatFavorit, nomorAyat, icFavorit ->
                         showDialogAyatFavorit {

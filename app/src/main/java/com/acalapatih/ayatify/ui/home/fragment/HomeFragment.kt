@@ -88,7 +88,7 @@ class HomeFragment : Fragment() {
                     }
                 }
             } else {
-                binding.tvAyatDibaca.text = "Belum ada ayat yang ditandai"
+                binding.tvAyatDibaca.text = "Ayat belum ditandai"
             }
         }
 
@@ -130,7 +130,7 @@ class HomeFragment : Fragment() {
                     }
                 }
             } else {
-                binding.tvSuratDihafal.text = "Belum ada ayat yang ditandai"
+                binding.tvSuratDihafal.text = "Ayat belum ditandai"
             }
         }
     }

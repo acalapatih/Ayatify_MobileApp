@@ -40,7 +40,7 @@ class BacaSuratAdapter(
                 }
 
                 icFavorit.setOnClickListener {
-                    val ayatFavorit = AyatFavorit(nomorSurat, namaSurat, data.nomorAyat)
+                    val ayatFavorit = AyatFavorit(nomorSurat, namaSurat, data.nomorAyat, data.lafadzAyat, data.terjemahanAyat)
                     ayatFavoritSelected?.invoke(ayatFavorit, data.nomorAyat, icFavorit)
                 }
 

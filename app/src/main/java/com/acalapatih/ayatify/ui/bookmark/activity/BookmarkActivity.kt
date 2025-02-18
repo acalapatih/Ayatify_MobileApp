@@ -34,7 +34,6 @@ class BookmarkActivity : BaseActivity<ActivityBookmarkBinding>() {
         supportActionBar?.hide()
 
         initView()
-        initObserver()
         initListener()
     }
 
@@ -53,7 +52,7 @@ class BookmarkActivity : BaseActivity<ActivityBookmarkBinding>() {
                     icTerakhirDibaca.setImageResource(R.drawable.ic_dibaca_dark)
                     icAyatFavorit.setImageResource(R.drawable.ic_ayat_favorit_dark)
 
-                    bookmarkAdapter = BookmarkAdapter(this@BookmarkActivity, isDarkModeActive)
+                    bookmarkAdapter = BookmarkAdapter(isDarkModeActive)
                     val layoutManager = LinearLayoutManager(this@BookmarkActivity)
                     val itemDecoration = DividerItemDecoration(this@BookmarkActivity, layoutManager.orientation)
                     with(binding.rvAyat) {
@@ -61,13 +60,14 @@ class BookmarkActivity : BaseActivity<ActivityBookmarkBinding>() {
                         addItemDecoration(itemDecoration)
                         adapter = bookmarkAdapter
                     }
+                    initObserver(isDarkModeActive)
                 } else {
                     AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
                     icBack.setImageResource(R.drawable.ic_back_light)
                     icTerakhirDibaca.setImageResource(R.drawable.ic_dibaca_light)
                     icAyatFavorit.setImageResource(R.drawable.ic_ayat_favorit_light)
 
-                    bookmarkAdapter = BookmarkAdapter(this@BookmarkActivity, isDarkModeActive)
+                    bookmarkAdapter = BookmarkAdapter(isDarkModeActive)
                     val layoutManager = LinearLayoutManager(this@BookmarkActivity)
                     val itemDecoration = DividerItemDecoration(this@BookmarkActivity, layoutManager.orientation)
                     with(binding.rvAyat) {
@@ -75,13 +75,14 @@ class BookmarkActivity : BaseActivity<ActivityBookmarkBinding>() {
                         addItemDecoration(itemDecoration)
                         adapter = bookmarkAdapter
                     }
+                    initObserver(isDarkModeActive)
                 }
             }
         }
     }
 
     @SuppressLint("SetTextI18n")
-    private fun initObserver() {
+    private fun initObserver(isDarkMode: Boolean) {
         viewModel.ayatDibaca.observe(this) { data ->
             if (data != null) {
                 with(binding.tvAyatDibaca) {
@@ -99,6 +100,18 @@ class BookmarkActivity : BaseActivity<ActivityBookmarkBinding>() {
         viewModel.getAllAyatFavorit().observe(this) { listAyatFavorit ->
             if (listAyatFavorit != null) {
                 bookmarkAdapter.setListFavorite(listAyatFavorit)
+
+                bookmarkAdapter.lihatAyatFavorit = { ayatFavorit ->
+                    ayatFavorit.namaSurat?.let {
+                        showDialogItemAyatFavorit(
+                            it,
+                            ayatFavorit.nomorAyat,
+                            ayatFavorit.lafadzAyat,
+                            ayatFavorit.terjemahanAyat,
+                            isDarkMode
+                        )
+                    }
+                }
 
                 bookmarkAdapter.hapusAyatFavorit = { ayatFavorit ->
                     showDialogHapusAyatFavorit {
