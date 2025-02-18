@@ -1,21 +1,21 @@
 {
   "project_info": {
-    "project_number": "269003536493",
-    "project_id": "hafalin-1d05d",
-    "storage_bucket": "hafalin-1d05d.appspot.com"
+    "project_number": "1077834866360",
+    "project_id": "ayatify114",
+    "storage_bucket": "ayatify114.firebasestorage.app"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:269003536493:android:f0c2766464fb8571586764",
+        "mobilesdk_app_id": "1:1077834866360:android:b0cde58a785b559596de4d",
         "android_client_info": {
-          "package_name": "com.acalapatih.hafalin"
+          "package_name": "com.acalapatih.ayatify"
         }
       },
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyAMuTBRFJ_0k-QI_qj10idIfVM2AMlEQp4"
+          "current_key": "AIzaSyDhQMl9F7J3gczitk8aEClBx7_jGjiVfW4"
         }
       ],
       "services": {
