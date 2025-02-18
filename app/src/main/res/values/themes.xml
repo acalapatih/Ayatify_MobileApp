@@ -1,0 +1,127 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.Ayatify" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/green_18392B</item>
+        <item name="colorPrimaryDark">@color/green_18392B</item>
+        <item name="colorAccent">@color/teal_200</item>
+        <!-- Customize your theme here. -->
+    </style>
+
+    <style name="bg_primary">
+        <item name="android:background">@color/white</item>
+    </style>
+
+    <style name="bg_dialog">
+        <item name="android:background">@drawable/bg_dialog_light</item>
+    </style>
+
+    <style name="bg_banner_home">
+        <item name="android:background">@drawable/bg_banner_light</item>
+    </style>
+
+    <style name="bg_penanda">
+        <item name="android:background">@drawable/bg_penanda_light</item>
+    </style>
+
+    <style name="bg_black">
+        <item name="android:background">@color/black_040D12</item>
+    </style>
+
+    <style name="tv_nomor">
+        <item name="android:fontFamily">@font/poppins_semibold</item>
+        <item name="android:textColor">@color/white_DAFFFB</item>
+    </style>
+
+    <style name="tv_regular">
+        <item name="android:fontFamily">@font/poppins</item>
+        <item name="android:textColor">@color/black_040D12</item>
+    </style>
+
+    <style name="tv_semibold">
+        <item name="android:fontFamily">@font/poppins_semibold</item>
+        <item name="android:textColor">@color/black_040D12</item>
+    </style>
+
+    <style name="tv_bold">
+        <item name="android:fontFamily">@font/poppins_bold</item>
+        <item name="android:textColor">@color/black_040D12</item>
+    </style>
+
+    <style name="tv_const_bold">
+        <item name="android:fontFamily">@font/poppins_bold</item>
+        <item name="android:textColor">@color/black_040D12</item>
+    </style>
+
+    <style name="line_thick">
+        <item name="android:background">@color/green_18392B</item>
+        <item name="android:layout_marginTop">20dp</item>
+        <item name="layout_constraintStart_toStartOf">parent</item>
+        <item name="layout_constraintEnd_toEndOf">parent</item>
+    </style>
+
+    <style name="line_thin">
+        <item name="android:background">@color/green_18392B</item>
+        <item name="android:alpha">0.5</item>
+        <item name="layout_constraintStart_toStartOf">parent</item>
+        <item name="layout_constraintEnd_toEndOf">parent</item>
+    </style>
+
+    <style name="Theme.Ayatify.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="bg_float_button">
+        <item name="android:background">@drawable/bg_float_button_blue</item>
+    </style>
+
+    <style name="bg_widget">
+        <item name="android:background">@drawable/bg_widget_light</item>
+    </style>
+
+    <style name="bg_bottom_nav_audio">
+        <item name="android:background">@drawable/bg_bottom_nav_light</item>
+    </style>
+
+    <!--Button Color-->
+    <style name="btn_rekam" parent="Theme.AppCompat.DayNight.DarkActionBar">
+        <item name="android:background">@drawable/bg_btn_rekam</item>
+        <item name="android:fontFamily">@font/poppins_semibold</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:insetBottom">0dp</item>
+        <item name="android:insetTop">0dp</item>
+    </style>
+
+    <style name="btn_audio" parent="Theme.AppCompat.DayNight.DarkActionBar">
+        <item name="android:background">@drawable/bg_btn_audio</item>
+        <item name="android:fontFamily">@font/poppins_semibold</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:insetBottom">0dp</item>
+        <item name="android:insetTop">0dp</item>
+    </style>
+
+    <style name="btn_simpan" parent="Theme.AppCompat.DayNight.DarkActionBar">
+        <item name="android:background">@drawable/bg_btn_simpan</item>
+        <item name="android:fontFamily">@font/poppins_semibold</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:insetBottom">0dp</item>
+        <item name="android:insetTop">0dp</item>
+    </style>
+
+    <style name="btn_batal" parent="Theme.AppCompat.DayNight.DarkActionBar">
+        <item name="android:background">@drawable/bg_btn_batal</item>
+        <item name="android:fontFamily">@font/poppins_semibold</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:insetBottom">0dp</item>
+        <item name="android:insetTop">0dp</item>
+    </style>
+
+    <style name="tab_text" parent="@android:style/TextAppearance.Widget.TabWidget">
+        <item name="android:fontFamily">@font/poppins_semibold</item>
+    </style>
+
+    <style name="Theme.OneAyat.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="Theme.OneAyat.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+</resources>

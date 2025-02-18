@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cv_juz"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_juz"
+        style="@style/bg_primary"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/ic_nomor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:contentDescription="@string/desc_ic_nomor"
+            android:src="@drawable/ic_nomor_dark"
+            app:layout_constraintBottom_toBottomOf="@id/tv_info_juz"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/tv_juz" />
+
+        <TextView
+            android:id="@+id/tv_nomor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/tv_nomor"
+            android:text="@string/tv_nomor"
+            android:textSize="8sp"
+            app:layout_constraintBottom_toBottomOf="@id/ic_nomor"
+            app:layout_constraintEnd_toEndOf="@id/ic_nomor"
+            app:layout_constraintStart_toStartOf="@id/ic_nomor"
+            app:layout_constraintTop_toTopOf="@id/ic_nomor"
+            tools:ignore="SmallSp" />
+
+        <TextView
+            android:id="@+id/tv_juz"
+            style="@style/tv_semibold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toTopOf="@id/tv_info_juz"
+            app:layout_constraintStart_toEndOf="@id/ic_nomor"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="@string/tv_juz" />
+
+        <TextView
+            android:id="@+id/tv_info_juz"
+            style="@style/tv_regular"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="@id/line_light"
+            app:layout_constraintStart_toStartOf="@id/tv_juz"
+            app:layout_constraintTop_toBottomOf="@id/tv_juz"
+            tools:text="@string/tv_info_juz" />
+
+        <View
+            android:id="@+id/line_light"
+            style="@style/line_thin"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="10dp"
+            app:layout_constraintTop_toBottomOf="@id/tv_info_juz" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>

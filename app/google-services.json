@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "269003536493",
+    "project_id": "hafalin-1d05d",
+    "storage_bucket": "hafalin-1d05d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:269003536493:android:f0c2766464fb8571586764",
+        "android_client_info": {
+          "package_name": "com.acalapatih.hafalin"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAMuTBRFJ_0k-QI_qj10idIfVM2AMlEQp4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

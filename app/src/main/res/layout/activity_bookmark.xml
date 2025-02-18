@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.bookmark.activity.BookmarkActivity"
+    style="@style/bg_primary">
+
+    <ImageView
+        android:id="@+id/ic_back"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:contentDescription="@string/tv_back"
+        android:src="@drawable/ic_back_light"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_bookmark"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/tv_bookmark"
+        style="@style/tv_semibold"
+        android:textSize="14sp"
+        app:layout_constraintStart_toEndOf="@id/ic_back"
+        app:layout_constraintTop_toTopOf="@id/ic_back"
+        app:layout_constraintBottom_toBottomOf="@id/ic_back"
+        android:layout_marginStart="10dp"/>
+
+    <View
+        android:id="@+id/line_thick"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        style="@style/line_thick"
+        app:layout_constraintTop_toBottomOf="@id/tv_bookmark"/>
+
+    <ImageView
+        android:id="@+id/ic_terakhir_dibaca"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/desc_icon_terakhir_dibaca"
+        android:src="@drawable/ic_dibaca_light"
+        app:layout_constraintTop_toBottomOf="@id/line_thick"
+        app:layout_constraintStart_toStartOf="@id/ic_back"
+        app:layout_constraintBottom_toTopOf="@id/line_terakhir_dibaca" />
+
+    <TextView
+        android:id="@+id/tv_terakhir_dibaca"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/tv_terakhir_dibaca"
+        style="@style/tv_semibold"
+        android:textSize="14sp"
+        app:layout_constraintTop_toBottomOf="@id/line_thick"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="15dp"/>
+
+    <TextView
+        android:id="@+id/tv_ayat_dibaca"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="@string/tv_ayat_dibaca"
+        style="@style/tv_regular"
+        android:textSize="12sp"
+        app:layout_constraintTop_toBottomOf="@id/tv_terakhir_dibaca"
+        app:layout_constraintStart_toStartOf="@id/tv_terakhir_dibaca"/>
+
+    <View
+        android:id="@+id/line_terakhir_dibaca"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        style="@style/line_thin"
+        app:layout_constraintTop_toBottomOf="@id/tv_ayat_dibaca"
+        android:layout_marginTop="15dp"/>
+
+    <ImageView
+        android:id="@+id/ic_ayat_favorit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_ayat_favorit_light"
+        app:layout_constraintStart_toStartOf="@id/ic_back"
+        app:layout_constraintTop_toBottomOf="@id/line_terakhir_dibaca"
+        android:layout_marginTop="15dp"
+        android:contentDescription="@string/desc_ic_ayat_favorit" />
+
+    <TextView
+        android:id="@+id/tv_ayat_favorit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/tv_ayat_favorit"
+        style="@style/tv_semibold"
+        android:textSize="14sp"
+        app:layout_constraintTop_toBottomOf="@id/line_terakhir_dibaca"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="15dp"/>
+
+    <View
+        android:id="@+id/line_ayat_favorit"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        style="@style/line_thin"
+        app:layout_constraintTop_toBottomOf="@id/ic_ayat_favorit"
+        android:layout_marginTop="15dp"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_ayat"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/line_ayat_favorit"
+        tools:listitem="@layout/recyclerview_ayat_favorit"/>
+
+    <TextView
+        android:id="@+id/tv_no_data_ayat_favorit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/no_data_ayat_favorit"
+        style="@style/tv_regular"
+        android:textSize="14sp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

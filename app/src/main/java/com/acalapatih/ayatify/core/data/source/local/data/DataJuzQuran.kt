@@ -1,0 +1,71 @@
+package com.acalapatih.ayatify.core.data.source.local.data
+
+object DataJuzQuran {
+    val nomorJuzList: List<String> = (1..30).map { it.toString() }
+
+    val namaJuzList: List<String> = listOf(
+        "Juz 1",
+        "Juz 2",
+        "Juz 3",
+        "Juz 4",
+        "Juz 5",
+        "Juz 6",
+        "Juz 7",
+        "Juz 8",
+        "Juz 9",
+        "Juz 10",
+        "Juz 11",
+        "Juz 12",
+        "Juz 13",
+        "Juz 14",
+        "Juz 15",
+        "Juz 16",
+        "Juz 17",
+        "Juz 18",
+        "Juz 19",
+        "Juz 20",
+        "Juz 21",
+        "Juz 22",
+        "Juz 23",
+        "Juz 24",
+        "Juz 25",
+        "Juz 26",
+        "Juz 27",
+        "Juz 28",
+        "Juz 29",
+        "Juz 30"
+    )
+
+    val infoJuzList: List<String> = listOf(
+        "148 Ayat",
+        "111 Ayat",
+        "126 Ayat",
+        "131 Ayat",
+        "124 Ayat",
+        "110 Ayat",
+        "149 Ayat",
+        "142 Ayat",
+        "159 Ayat",
+        "127 Ayat",
+        "151 Ayat",
+        "170 Ayat",
+        "154 Ayat",
+        "227 Ayat",
+        "185 Ayat",
+        "269 Ayat",
+        "190 Ayat",
+        "202 Ayat",
+        "339 Ayat",
+        "171 Ayat",
+        "178 Ayat",
+        "169 Ayat",
+        "357 Ayat",
+        "175 Ayat",
+        "246 Ayat",
+        "195 Ayat",
+        "399 Ayat",
+        "137 Ayat",
+        "431 Ayat",
+        "564 Ayat"
+    )
+}

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/app_navigation"
+    app:startDestination="@id/navigation_home">
+
+    <fragment
+        android:id="@+id/navigation_home"
+        android:label="@string/tv_nav_home"
+        android:name="com.acalapatih.ayatify.ui.home.fragment.HomeFragment"
+        tools:layout="@layout/fragment_home"/>
+
+    <fragment
+        android:id="@+id/navigation_quran"
+        android:label="@string/tv_nav_quran"
+        android:name="com.acalapatih.ayatify.ui.quran.QuranFragment"
+        tools:layout="@layout/fragment_quran"/>
+
+    <fragment
+        android:id="@+id/navigation_bookmark"
+        android:label="@string/tv_nav_bookmark"
+        android:name="com.acalapatih.ayatify.ui.bookmark.fragment.BookmarkFragment"
+        tools:layout="@layout/fragment_bookmark"/>
+
+    <fragment
+        android:id="@+id/navigation_setting"
+        android:label="@string/tv_nav_setting"
+        android:name="com.acalapatih.ayatify.ui.setting.SettingFragment"
+        tools:layout="@layout/fragment_setting"/>
+</navigation>

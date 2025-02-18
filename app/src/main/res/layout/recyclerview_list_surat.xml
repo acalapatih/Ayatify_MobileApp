@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/cv_surat"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_surat"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/bg_primary">
+
+        <ImageView
+            android:id="@+id/ic_nomor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_nomor_dark"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="@id/tv_info_surat"
+            app:layout_constraintTop_toTopOf="@id/tv_surat"
+            android:layout_marginStart="20dp"
+            android:contentDescription="@string/desc_ic_nomor" />
+
+        <TextView
+            android:id="@+id/tv_nomor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="@string/tv_nomor"
+            style="@style/tv_nomor"
+            android:textSize="8sp"
+            app:layout_constraintTop_toTopOf="@id/ic_nomor"
+            app:layout_constraintBottom_toBottomOf="@id/ic_nomor"
+            app:layout_constraintStart_toStartOf="@id/ic_nomor"
+            app:layout_constraintEnd_toEndOf="@id/ic_nomor"
+            tools:ignore="SmallSp" />
+
+        <TextView
+            android:id="@+id/tv_surat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/tv_semibold"
+            android:textSize="14sp"
+            tools:text="@string/tv_surat"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toEndOf="@id/ic_nomor"
+            app:layout_constraintBottom_toTopOf="@id/tv_info_surat"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="10dp"/>
+
+        <TextView
+            android:id="@+id/tv_info_surat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/tv_regular"
+            android:textSize="12sp"
+            tools:text="@string/tv_info_surat"
+            app:layout_constraintStart_toStartOf="@id/tv_surat"
+            app:layout_constraintTop_toBottomOf="@id/tv_surat"
+            app:layout_constraintBottom_toBottomOf="@id/line_light"/>
+
+        <View
+            android:id="@+id/line_light"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            style="@style/line_thin"
+            app:layout_constraintTop_toBottomOf="@id/tv_info_surat"
+            android:layout_marginTop="10dp"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>

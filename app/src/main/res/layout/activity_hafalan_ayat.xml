@@ -1,0 +1,329 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/bg_primary"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    tools:context=".ui.hafalanquran.activity.HafalanAyatActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/ic_back"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:contentDescription="@string/tv_back"
+            android:src="@drawable/ic_back_light"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_hafalan_quran"
+            style="@style/tv_semibold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:text="@string/tv_hafalan_quran"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="@id/ic_back"
+            app:layout_constraintStart_toEndOf="@id/ic_back"
+            app:layout_constraintTop_toTopOf="@id/ic_back" />
+
+        <ImageView
+            android:id="@+id/ic_bookmark"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="20dp"
+            android:contentDescription="@string/tv_bookmark"
+            android:src="@drawable/ic_bookmark_light"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <View
+            android:id="@+id/line_thick1"
+            style="@style/line_thick"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="20dp"
+            app:layout_constraintTop_toBottomOf="@id/ic_back" />
+
+        <TextView
+            android:id="@+id/tv_surat"
+            style="@style/tv_semibold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toTopOf="@id/line_thick2"
+            app:layout_constraintStart_toStartOf="@id/tv_hafalan_quran"
+            app:layout_constraintTop_toBottomOf="@id/line_thick1"
+            tools:text="@string/tv_surat" />
+
+        <TextView
+            android:id="@+id/tv_ayat_ke"
+            style="@style/tv_semibold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="50dp"
+            tools:text="@string/tv_ayat_ke"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="@id/tv_surat"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/tv_surat" />
+
+        <View
+            android:id="@+id/line_thick2"
+            style="@style/line_thick"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="20dp"
+            app:layout_constraintTop_toBottomOf="@id/tv_surat" />
+
+        <TextView
+            android:id="@+id/tv_ayat"
+            style="@style/tv_regular"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="40dp"
+            android:layout_marginTop="30dp"
+            android:textSize="20sp"
+            android:visibility="visible"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/line_thick2"
+            tools:text="@string/tv_ayat" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_audio"
+            style="@style/btn_audio"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_marginTop="30dp"
+            android:paddingStart="50dp"
+            android:paddingEnd="15dp"
+            android:text="@string/btn_audio"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_ayat"
+            tools:ignore="RtlSymmetry" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_rekam"
+            style="@style/btn_rekam"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_marginTop="25dp"
+            android:paddingStart="50dp"
+            android:paddingEnd="15dp"
+            android:text="@string/btn_rekam"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btn_audio"
+            tools:ignore="RtlSymmetry" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_proses"
+            style="@style/btn_rekam"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_marginTop="25dp"
+            android:paddingStart="50dp"
+            android:paddingEnd="15dp"
+            android:text="@string/btn_proses"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btn_rekam"
+            tools:ignore="RtlSymmetry" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cv_hasil_hafalan"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="40dp"
+            android:layout_marginTop="80dp"
+            android:visibility="gone"
+            app:cardCornerRadius="20dp"
+            android:layout_marginBottom="50dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btn_rekam">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/cl_hasil_hafalan"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_hasil_hafalan_light"
+                android:paddingVertical="20dp">
+
+                <TextView
+                    android:id="@+id/tv_tingkat_kemiripan"
+                    style="@style/tv_semibold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:text="@string/tv_tingkat_kemiripan"
+                    android:textSize="14sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tv_persentase_kemiripan"
+                    style="@style/tv_semibold"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/tv_persentase_kemiripan"
+                    android:textAlignment="center"
+                    android:textSize="18sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_tingkat_kemiripan" />
+
+                <TextView
+                    android:id="@+id/tv_hasil_hafalan"
+                    style="@style/tv_semibold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="30dp"
+                    android:text="@string/tv_hasil_hafalan"
+                    android:textSize="14sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_persentase_kemiripan" />
+
+                <TextView
+                    android:id="@+id/tv_predikat_hasil"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="25dp"
+                    android:fontFamily="@font/poppins_semibold"
+                    android:text="@string/tv_predikat_hasil"
+                    android:textColor="@color/green_9ACD32"
+                    android:textSize="20sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_hasil_hafalan" />
+
+                <TextView
+                    android:id="@+id/tv_letak_kesalahan"
+                    style="@style/tv_semibold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    android:visibility="gone"
+                    android:text="@string/tv_hasil_deteksi"
+                    android:textSize="12sp"
+                    app:layout_constraintStart_toStartOf="@id/tv_hasil_hafalan"
+                    app:layout_constraintTop_toBottomOf="@id/tv_predikat_hasil" />
+
+                <TextView
+                    android:id="@+id/tv_ayat_kesalahan"
+                    style="@style/tv_regular"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_marginTop="25dp"
+                    android:visibility="gone"
+                    android:text="@string/tv_ayat_kesalahan"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_letak_kesalahan" />
+
+                <TextView
+                    android:id="@+id/tv_ayat_selanjutnya"
+                    style="@style/tv_regular"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="30dp"
+                    android:layout_marginVertical="10dp"
+                    android:text="@string/tv_ayat_selanjutnya"
+                    android:textAlignment="center"
+                    android:textSize="12sp"
+                    android:visibility="gone"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_ayat_kesalahan" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cv_audio_ayat"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/white"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/cl_audio_ayat"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/bg_primary"
+                app:layout_constraintBottom_toBottomOf="parent">
+
+                <ImageView
+                    android:id="@+id/btn_stop"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="@string/desc_btn_stop"
+                    android:src="@drawable/btn_stop"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/cl_audio_player"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    style="@style/bg_bottom_nav_audio"
+                    app:layout_constraintTop_toBottomOf="@id/btn_stop">
+
+                    <TextView
+                        android:id="@+id/tv_audio_ayat"
+                        style="@style/tv_semibold"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginVertical="25dp"
+                        android:drawablePadding="5dp"
+                        android:text="@string/tv_audio_ayat"
+                        android:textSize="14sp"
+                        app:drawableLeftCompat="@drawable/ic_audio_light"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <ProgressBar
+            android:id="@+id/progress_bar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

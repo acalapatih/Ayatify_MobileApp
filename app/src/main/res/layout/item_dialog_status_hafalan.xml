@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:cardCornerRadius="20dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        style="@style/bg_dialog"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/tv_status_hafalan"
+            style="@style/tv_semibold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="30dp"
+            android:text="@string/tv_status_hafalan"
+            android:textSize="14sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/ic_close"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:layout_marginEnd="30dp"
+            android:contentDescription="@string/desc_ic_close"
+            android:src="@drawable/ic_close_light"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/ic_lancar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:src="@drawable/ic_lancar"
+            app:layout_constraintBottom_toBottomOf="@id/tv_detail_lancar"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/tv_lancar" />
+
+        <TextView
+            android:id="@+id/tv_lancar"
+            style="@style/tv_semibold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="20dp"
+            android:text="@string/tv_lancar"
+            android:textSize="12sp"
+            app:layout_constraintStart_toEndOf="@id/ic_lancar"
+            app:layout_constraintTop_toBottomOf="@id/tv_status_hafalan" />
+
+        <TextView
+            android:id="@+id/tv_detail_lancar"
+            style="@style/tv_regular"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/tv_detail_lancar"
+            android:textSize="12sp"
+            app:layout_constraintStart_toStartOf="@id/tv_lancar"
+            app:layout_constraintTop_toBottomOf="@id/tv_lancar" />
+
+        <ImageView
+            android:id="@+id/ic_kuranglancar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:src="@drawable/ic_kuranglancar"
+            app:layout_constraintBottom_toBottomOf="@id/tv_detail_kuranglancar"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/tv_kuranglancar" />
+
+        <TextView
+            android:id="@+id/tv_kuranglancar"
+            style="@style/tv_semibold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="20dp"
+            android:text="@string/tv_kuranglancar"
+            android:textSize="12sp"
+            app:layout_constraintStart_toEndOf="@id/ic_kuranglancar"
+            app:layout_constraintTop_toBottomOf="@id/tv_detail_lancar" />
+
+        <TextView
+            android:id="@+id/tv_detail_kuranglancar"
+            style="@style/tv_regular"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/tv_detail_kuranglancar"
+            android:textSize="12sp"
+            app:layout_constraintStart_toStartOf="@id/tv_kuranglancar"
+            app:layout_constraintTop_toBottomOf="@id/tv_kuranglancar" />
+
+        <ImageView
+            android:id="@+id/ic_tidaklancar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:src="@drawable/ic_tidaklancar"
+            app:layout_constraintBottom_toBottomOf="@id/tv_detail_tidaklancar"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/tv_tidaklancar" />
+
+        <TextView
+            android:id="@+id/tv_tidaklancar"
+            style="@style/tv_semibold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="20dp"
+            android:text="@string/tv_tidaklancar"
+            android:textSize="12sp"
+            app:layout_constraintStart_toEndOf="@id/ic_tidaklancar"
+            app:layout_constraintTop_toBottomOf="@id/tv_detail_kuranglancar" />
+
+        <TextView
+            android:id="@+id/tv_detail_tidaklancar"
+            style="@style/tv_regular"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="30dp"
+            android:text="@string/tv_detail_tidaklancar"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@id/tv_tidaklancar"
+            app:layout_constraintTop_toBottomOf="@id/tv_tidaklancar" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>
