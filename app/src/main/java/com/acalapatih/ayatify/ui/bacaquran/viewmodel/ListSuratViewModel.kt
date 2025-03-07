@@ -12,7 +12,7 @@ import kotlinx.coroutines.launch
 class ListSuratViewModel(
     private val usecase: BacaQuranUsecase
 ): ViewModel() {
-    private val _getListSurat = MutableLiveData<Resource<ListSuratModel>>()
+    private val _getListSurat: MutableLiveData<Resource<ListSuratModel>> = MutableLiveData()
     val getListSurat: LiveData<Resource<ListSuratModel>> get() = _getListSurat
 
     fun getListSurat() {

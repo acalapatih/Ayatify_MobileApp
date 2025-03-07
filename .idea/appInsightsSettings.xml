@@ -22,10 +22,10 @@
             <InsightsFilterSettings>
               <option name="connection">
                 <ConnectionSetting>
-                  <option name="appId" value="PLACEHOLDER" />
-                  <option name="mobileSdkAppId" value="" />
-                  <option name="projectId" value="" />
-                  <option name="projectNumber" value="" />
+                  <option name="appId" value="com.acalapatih.ayatify" />
+                  <option name="mobileSdkAppId" value="1:1077834866360:android:b0cde58a785b559596de4d" />
+                  <option name="projectId" value="ayatify114" />
+                  <option name="projectNumber" value="1077834866360" />
                 </ConnectionSetting>
               </option>
               <option name="signal" value="SIGNAL_UNSPECIFIED" />
