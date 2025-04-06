@@ -34,7 +34,7 @@
     </style>
 
     <style name="tv_ayat">
-        <item name="android:fontFamily">@font/rubik_regular</item>
+        <item name="android:fontFamily">@font/notonaskh_arabic_medium</item>
         <item name="android:textColor">@color/black_040D12</item>
     </style>
 

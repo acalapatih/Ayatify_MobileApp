@@ -89,7 +89,7 @@
 
         <TextView
             android:id="@+id/tv_ayat"
-            style="@style/tv_regular"
+            style="@style/tv_ayat"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="40dp"
