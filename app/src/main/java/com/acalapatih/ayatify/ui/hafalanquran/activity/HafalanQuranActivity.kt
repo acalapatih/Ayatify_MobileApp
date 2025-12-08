@@ -51,6 +51,7 @@ class HafalanQuranActivity : BaseActivity<ActivityHafalanQuranBinding>(), Hafala
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         supportActionBar?.hide()
+        useSafeArea()
 
         viewModel.getListSurah()
 

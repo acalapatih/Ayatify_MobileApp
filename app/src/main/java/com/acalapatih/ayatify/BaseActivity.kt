@@ -11,7 +11,10 @@ import android.view.Window
 import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.ViewCompat
+import androidx.core.view.WindowInsetsCompat
 import androidx.core.view.isVisible
+import androidx.core.view.updatePadding
 import androidx.viewbinding.ViewBinding
 import com.acalapatih.ayatify.databinding.DialogAturNotifikasiBinding
 import com.acalapatih.ayatify.databinding.DialogAyatFavoritBinding
@@ -41,6 +44,18 @@ abstract class BaseActivity<VB: ViewBinding> : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         _binding = getViewBinding()
         setContentView(getLayoutResource())
+    }
+
+    protected fun useSafeArea(top: Boolean = true, bottom: Boolean = true) {
+        ViewCompat.setOnApplyWindowInsetsListener(binding.root) { view, insets ->
+            val bars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
+
+            view.updatePadding(
+                top = if (top) bars.top else view.paddingTop,
+                bottom = if (bottom) bars.bottom else view.paddingBottom
+            )
+            insets
+        }
     }
 
     protected fun showToast(message: String, duration: Int = Toast.LENGTH_LONG) {

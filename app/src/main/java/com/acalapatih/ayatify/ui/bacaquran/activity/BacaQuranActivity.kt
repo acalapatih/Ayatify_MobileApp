@@ -35,6 +35,7 @@ class BacaQuranActivity : BaseActivity<ActivityBacaQuranBinding>(), ListSuratAda
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         supportActionBar?.hide()
+        useSafeArea()
 
         viewModel.getListSurat()
 

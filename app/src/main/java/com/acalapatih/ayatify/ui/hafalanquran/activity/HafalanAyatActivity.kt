@@ -53,6 +53,7 @@ class HafalanAyatActivity : BaseActivity<ActivityHafalanAyatBinding>() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         supportActionBar?.hide()
+        useSafeArea()
 
         nomorSurat?.let { nomorAyat?.let { it1 -> viewModel.getAyat(it, it1) } }
 

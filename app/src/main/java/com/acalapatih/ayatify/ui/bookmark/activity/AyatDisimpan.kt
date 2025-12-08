@@ -41,6 +41,7 @@ class AyatDisimpan : BaseActivity<ActivityAyatFavoritBinding>(), BacaSuratAdapte
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         supportActionBar?.hide()
+        useSafeArea()
 
         nomorSurat?.let { viewModel.getListAyat(it) }
 

@@ -43,6 +43,7 @@ class BacaSuratActivity : BaseActivity<ActivityBacaSuratBinding>(), BacaSuratAda
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         supportActionBar?.hide()
+        useSafeArea()
 
         nomorSurat?.let { viewModel.getListAyat(it) }
 

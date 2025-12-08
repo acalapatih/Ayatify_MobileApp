@@ -32,6 +32,7 @@ class BookmarkActivity : BaseActivity<ActivityBookmarkBinding>() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         supportActionBar?.hide()
+        useSafeArea()
 
         initView()
         initListener()
