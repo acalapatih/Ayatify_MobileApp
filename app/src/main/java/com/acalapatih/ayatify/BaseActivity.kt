@@ -46,6 +46,10 @@ abstract class BaseActivity<VB: ViewBinding> : AppCompatActivity() {
         setContentView(getLayoutResource())
     }
 
+    protected fun showToast(message: String, duration: Int = Toast.LENGTH_LONG) {
+        Toast.makeText(this, message, duration).show()
+    }
+
     protected fun useSafeArea(top: Boolean = true, bottom: Boolean = true) {
         ViewCompat.setOnApplyWindowInsetsListener(binding.root) { view, insets ->
             val bars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
@@ -54,12 +58,9 @@ abstract class BaseActivity<VB: ViewBinding> : AppCompatActivity() {
                 top = if (top) bars.top else view.paddingTop,
                 bottom = if (bottom) bars.bottom else view.paddingBottom
             )
+
             insets
         }
-    }
-
-    protected fun showToast(message: String, duration: Int = Toast.LENGTH_LONG) {
-        Toast.makeText(this, message, duration).show()
     }
 
     protected fun showDialogTerakhirDibaca(
