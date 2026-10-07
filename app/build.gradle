@@ -13,9 +13,9 @@ android {
     defaultConfig {
         applicationId "com.acalapatih.ayatify"
         minSdk 21
-        targetSdk 36
-        versionCode 8
-        versionName 'v1.0.2'
+        targetSdk 37
+        versionCode 10
+        versionName 'v1.0.4'
 
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
